@@ -73,28 +73,28 @@ const MeetList = () => {
           img='/icons/add-meeting.svg'
           title='New Meeting'
           description='Start meet to everyone'
-          handleCLick={() => setMeetingState ('isInstantMeeting')}
+          handleClick={() => setMeetingState ('isInstantMeeting')}
           className='bg-blue-1'
         />
         <HomeCard 
           img='/icons/schedule.svg'
           title='Schedule'
           description='Set a schedule to meeting'
-          handleCLick={() => setMeetingState ('isScheduleMeeting')}
+          handleClick={() => setMeetingState ('isScheduleMeeting')}
           className='bg-blue-1'
         />
         <HomeCard
           img='/icons/recordings.svg'
           title={'Recordings'}
           description='Trace of your recording'
-          handleCLick={() => router.push('/recordings')}
+          handleClick={() => router.push('/recordings')}
           className='bg-blue-1'
         />
         <HomeCard
           img='/icons/join-meeting.svg'
           title='Join Meeting'
           description='via invitation link'
-          handleCLick={() => setMeetingState('isJoiningMeeting')}
+          handleClick={() => setMeetingState('isJoiningMeeting')}
           className='bg-blue-1'
         />
 
@@ -102,7 +102,7 @@ const MeetList = () => {
           <MeetModal 
             isOpen={meetingState === 'isScheduleMeeting'}
             onClose={() => setMeetingState(undefined)}
-            title='Create Meeting'
+            title="Create Meeting"
             handleClick={createMeeting}
           >
             <div className='flex flex-col gap-2.5'>
@@ -134,7 +134,7 @@ const MeetList = () => {
         <MeetModal 
           isOpen={meetingState === 'isScheduleMeeting'}
           onClose={() => setMeetingState(undefined)}
-          title='Meeting Created'
+          title="Meeting Created"
           className='text-center'
           handleClick={() => {
             navigator.clipboard.writeText(meetingLink);
@@ -148,7 +148,7 @@ const MeetList = () => {
         <MeetModal 
           isOpen={meetingState === 'isInstantMeeting'}
           onClose={() => setMeetingState(undefined)}
-          title='Start an Instant Meeting'
+          title="Start an Instant Meeting"
           className='text-center'
           buttonText='Start Meeting'
           handleClick={createMeeting}
@@ -157,13 +157,14 @@ const MeetList = () => {
         <MeetModal 
           isOpen={meetingState === 'isJoiningMeeting'}
           onClose={() => setMeetingState(undefined)}
-          className='text-center'
-          buttonText='Join Meeting'
+          title="Drop your link"
+          className="text-center"
+          buttonText="Join Meeting"
           handleClick={() => router.push(values.link)}
         >
           <Input
-          placeholder='Meeting link'
-          className='bg-dark-2 focus-visible:ring-offset-0'
+          placeholder="Meeting link"
+          className="bg-dark-2 focus-visible:ring-offset-0"
           onChange={(e) => setValues({ ...values, link: e.target.value })} 
         />
         </MeetModal>
