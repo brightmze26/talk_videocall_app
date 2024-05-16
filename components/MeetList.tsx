@@ -1,7 +1,7 @@
 "use client"
 
 import { useState } from 'react';
-import Card from './Card';
+import HomeCard from './HomeCard';
 import { useRouter } from 'next/navigation';
 import MeetModal from './MeetModal';
 import { Call, useStreamVideoClient } from '@stream-io/video-react-sdk';
@@ -69,28 +69,28 @@ const MeetList = () => {
 
   return (
     <section className='grid grid-cols-1 gap-5 md:grid-cols-2 xl:grid-cols-4 '>
-        <Card 
+        <HomeCard 
           img='/icons/add-meeting.svg'
           title='New Meeting'
           description='Start meet to everyone'
           handleCLick={() => setMeetingState ('isInstantMeeting')}
           className='bg-blue-1'
         />
-        <Card 
+        <HomeCard 
           img='/icons/schedule.svg'
           title='Schedule'
           description='Set a schedule to meeting'
           handleCLick={() => setMeetingState ('isScheduleMeeting')}
           className='bg-blue-1'
         />
-        <Card 
+        <HomeCard
           img='/icons/recordings.svg'
           title={'Recordings'}
           description='Trace of your recording'
           handleCLick={() => router.push('/recordings')}
           className='bg-blue-1'
         />
-        <Card 
+        <HomeCard
           img='/icons/join-meeting.svg'
           title='Join Meeting'
           description='via invitation link'
