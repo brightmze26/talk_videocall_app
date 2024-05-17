@@ -5,10 +5,25 @@
 ### Build zoom clone use :
 - Next.js
 - Shadcn
-- Stream
+- getstream
 - Tailwind
 - Clerk
 - Typescript
 
+### Start
 
-### check at talk-videocall-app.vercel.app
+- npm install
+- Create folder [[...sign-in/up]] after folder sign-in/up
+- Create file .env and add :
+
+NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY=
+CLERK_SECRET_KEY=
+
+NEXT_PUBLIC_CLERK_SIGN_IN_URL=/sign-in
+NEXT_PUBLIC_CLERK_SIGN_UP_URL=/sign-up
+
+NEXT_PUBLIC_STREAM_API_KEY=
+STREAM_SECRET_KEY=
+
+- npm run dev
+
